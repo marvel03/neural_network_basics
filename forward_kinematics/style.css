@@ -15,4 +15,5 @@ canvas {
   position: relative;
   border: 1px solid #000;
   /* Add a border for visibility, optional */
+  margin-right: -700px;
 }

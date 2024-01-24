@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sketch</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Forward Kinematics</title>
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
+
+<body>
+  <button id='download_button' style="background-color:yellowgreen;
+  color:rgb(109, 83, 194);
+  border-radius:5px;
+  position: absolute;
+  left: 20px; /* Adjust the left position to your desired value */
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 15px 30px;">download training data</button>
+  <button id='set_Iteration' style="background-color:blueviolet;
+    color:red;
+    border-radius:5px;
+    position: absolute;
+    left: 20px; /* Adjust the left position to your desired value */
+    top: 40%;
+    transform: translate(0, -50%);
+    padding: 15px 30px;">set Max Iteration</button>
+  <button id='start' style="background-color:chocolate;
+        color:greenyellow;
+        border-radius:5px;
+        position: absolute;
+        left: 20px; /* Adjust the left position to your desired value */
+        bottom: 10%;
+        transform: translate(0, -50%);
+        padding: 15px 30px;">Start</button>
+  <input type="text" id="max_Iteration" placeholder="set ur max Iterations" style="border-radius:5px;
+   position: absolute;
+   left: 20px;
+   top: 32%;
+   transform: translate(0,-50%);
+   padding: 15px 30px;">
+  <script src="sketch.js"></script>
+  <!-- <script src="download_file.js"></script> -->
+</body>
+
 </html>
