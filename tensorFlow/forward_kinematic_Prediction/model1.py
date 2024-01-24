@@ -42,12 +42,12 @@ print(output)
 # print(len(input[0]))
 model = tf.keras.models.Sequential(
     [
-        tf.keras.layers.Dense(10, input_shape=input[0].shape, activation="relu"),
-        tf.keras.layers.Dense(10, input_shape=input[0].shape, activation="relu"),
+        tf.keras.layers.Dense(1000, input_shape=input[0].shape, activation="relu"),
+        tf.keras.layers.Dense(1000, input_shape=input[0].shape, activation="relu"),
         tf.keras.layers.Dense(len(output[0])),
     ]
 )
-model.compile(optimizer="adagrad", loss="hinge", metrics=["accuracy", "mae"])
+model.compile(optimizer="adam", loss="hinge", metrics=["accuracy", "mae"])
 
 model.fit(input, output, batch_size=input.shape[0], epochs=100000)
 
