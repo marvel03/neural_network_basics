@@ -47,9 +47,9 @@ model = tf.keras.models.Sequential(
         tf.keras.layers.Dense(len(output[0])),
     ]
 )
-model.compile(optimizer="adam", loss="hinge", metrics=["accuracy", "mae"])
+model.compile(optimizer="adam", loss="mean_squared_error", metrics=["accuracy", "mae"])
 
-model.fit(input, output, batch_size=input.shape[0], epochs=100000)
+model.fit(input, output, batch_size=input.shape[0], epochs=100)
 
 # print("evaluating the data")
 # model.evaluate(input_test, output_test)
@@ -61,3 +61,7 @@ print("testing the values")
 
 print("actual values: ", output[0])
 print("predicted values: ", model.predict(input)[0])
+
+model.save("nn.h5")
+new_Model = keras.models.load_model("nn.h5")
+new_Model.fit(input, output, batch_size=input.shape[0], epochs=10)
